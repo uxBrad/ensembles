@@ -20,11 +20,13 @@ Three things make this different from traditional personas:
 - A finished system. This is in active development. The schema, methodology, and skills are evolving as the framework gets used in real product contexts.
 - A general-purpose AI persona tool. This is specifically designed for B2B contexts where teams (not individuals) are the meaningful unit of decision-making.
 
-## How this differs from existing AI persona approaches
+## How this differs from existing approaches
 
-This framework was sparked by [Paul Boag's "Giving Users A Voice With Virtual Personas"](https://www.smashingmagazine.com/2025/12/giving-users-voice-virtual-personas/) on Smashing Magazine, which proposes making research repositories queryable through AI-powered personas. That framework solves a *research distribution* problem — getting existing user research into the hands of stakeholders making decisions.
+Most AI persona work focuses on individual users — making research repositories queryable, letting stakeholders ask "what would Sarah think?" and get synthesized answers. That's a research distribution problem, and it's worth solving.
 
-Ensemble personas solve a different problem: *predicting how groups will react to changes*. Where Boag's framework is built for retrieval and synthesis, this framework is built for simulation. They're complementary; you could use both. See [docs/comparison.md](docs/comparison.md) for a fuller treatment.
+Ensemble personas solve a different problem: *predicting how groups will react to changes*. The unit of analysis is the team configuration, not the individual. The output is a behavioral simulation, not a consultation. The inspiration draws from digital twin research, agent-based modeling in social science, and ensemble dynamics in narrative and organizational theory — all traditions that treat group behavior as emergent from structure rather than as the sum of individual traits.
+
+See [docs/comparison.md](docs/comparison.md) for a comparison with traditional personas, AI-consultable persona approaches, agent-based modeling, and service blueprints.
 
 ## Quick example
 
@@ -41,7 +43,7 @@ See [examples/echo/hartwell-group.md](examples/echo/hartwell-group.md) for the f
 1. **Read [docs/concepts.md](docs/concepts.md)** to understand what ensembles are and why this approach exists.
 2. **Read [docs/methodology.md](docs/methodology.md)** to learn how to identify ensembles from your research.
 3. **Copy [templates/ensemble-template.md](templates/ensemble-template.md)** and populate it for one of your ensembles.
-4. **Use the simulation skill** (coming soon — see [skills/](skills/)) to test stimuli against your populated ensemble.
+4. **Use the simulation skill** (see [skills/](skills/)) to test stimuli against your populated ensemble.
 
 The framework requires a UX researcher (or similarly trained synthesizer) to do the ensemble identification work. AI can help populate documents and run simulations, but the work of looking at research and recognizing what ensembles exist is judgment work that doesn't delegate well.
 
@@ -51,7 +53,7 @@ The framework requires a UX researcher (or similarly trained synthesizer) to do 
 ensemble-personas/
 ├── docs/                        Concepts, schema, methodology, comparison
 ├── templates/                   Blank templates ready to fill in
-├── skills/                      AI skills for population and simulation (coming soon)
+├── skills/                      AI skills for population and simulation (v1.0)
 └── examples/
     ├── echo/                    Reference ensembles for Echo, an accessibility audit tool
     └── use-cases/               Worked examples of running stimuli against ensembles
@@ -63,7 +65,7 @@ This framework is in active development. Current state:
 
 - Schema: v1.0 (locked)
 - Templates: v1.0
-- Skills: in design — descriptions available, implementations forthcoming
+- Skills: v1.0 — simulation skill and population skill available in [skills/](skills/)
 - Examples: two ensembles (Hartwell, Meridian), one use-case walkthrough
 
 Versioning will follow the schema. Breaking changes to the schema will trigger major version bumps; additive changes will be minor.
@@ -78,4 +80,4 @@ This is a personal project at the moment. If you're using the framework or want 
 
 ## Acknowledgments
 
-The seed for this framework was Paul Boag's article on virtual personas. The conceptual move from "personas as descriptions" to "personas as simulations" owes a debt to agent-based modeling traditions in social science. The "Character Bible" framing borrows from screenwriting, where ensemble dynamics have been formally modeled for decades.
+This framework draws on several traditions: digital twin research (modeling real-world entities with enough fidelity to simulate behavior), agent-based modeling in social science (treating group behavior as emergent from individual rules and topology), and ensemble dynamics from narrative theory (where character bibles have long modeled how casts of characters interact under pressure). AI-consultable persona approaches — which make research repositories queryable for stakeholders — represent a related but distinct problem space this framework builds alongside, not on top of.

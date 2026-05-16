@@ -25,28 +25,28 @@ Ensemble personas address all of these limitations, but at meaningful cost: they
 
 These approaches can complement each other. Traditional personas might describe the individual user's perspective; ensemble personas describe the team context that user operates in.
 
-## Boag's virtual personas
+## AI-consultable persona approaches
 
-Paul Boag's [Smashing Magazine article](https://www.smashingmagazine.com/2025/12/giving-users-voice-virtual-personas/) proposes "virtual personas" — making research repositories queryable through AI by giving stakeholders a way to consult personas as part of decision-making conversations. The framework includes multi-persona consultation, function-specific lenses, and protocols for when AI should defer to additional research.
+A growing class of approaches — including work by UX practitioners and AI tool builders — proposes making research repositories queryable through AI. The idea: give stakeholders a way to consult personas as part of decision-making conversations, rather than reading static documents. These frameworks typically include multi-persona consultation, function-specific lenses, and protocols for when AI should defer to additional research.
 
-**What Boag's framework solves:**
+**What these approaches solve:**
 
-A *research distribution* problem. Research gets done, sits in a shared drive, and the people making decisions never see it. Boag's solution: make research conversational. A marketing manager can ask "what would users think of this campaign?" and get synthesized perspectives drawn from existing research artifacts.
+A *research distribution* problem. Research gets done, sits in a shared drive, and the people making decisions never see it. AI-consultable personas make research conversational. A marketing manager can ask "what would users think of this campaign?" and get synthesized perspectives drawn from existing research artifacts.
 
 **What ensemble personas solve:**
 
 A *behavioral prediction* problem. Specifically: when groups encounter changes (new features, requirements, organizational shifts), how do they metabolize them? Outcomes vary substantially across groups in ways that single-user persona work doesn't capture.
 
-**Where the frameworks differ:**
+**Where the approaches differ:**
 
-| Dimension | Boag's virtual personas | Ensemble personas |
+| Dimension | AI-consultable personas | Ensemble personas |
 |---|---|---|
 | Unit of analysis | Individual user | Group configuration |
 | Primary use | Stakeholder consultation | Behavioral simulation |
 | AI role | Retrieval and synthesis | Simulation execution |
 | Output | Multi-perspective feedback | Predicted group response with evidence trail |
-| Persona format | Functional persona, made longer for AI | Structured ensemble doc with topology and repertoire |
-| Ground truth | Research repository | Research repository, but encoded into structured docs |
+| Persona format | Functional persona, made AI-readable | Structured ensemble doc with topology and repertoire |
+| Ground truth | Research repository | Research repository, encoded into structured docs |
 | Validation | Stakeholder finds output useful | Predictions match observed reality |
 
 **Where they could complement each other:**
@@ -54,14 +54,10 @@ A *behavioral prediction* problem. Specifically: when groups encounter changes (
 A complete UX research stack might include both:
 
 - Traditional personas for surface communication
-- Boag-style virtual personas for stakeholder querying
+- AI-consultable personas for stakeholder querying
 - Ensemble personas for predicting group-level reactions to specific changes
 
-Each is solving a different problem. None replaces another.
-
-**A note on lineage:**
-
-Ensemble personas were directly sparked by Boag's article. The conceptual move from "personas as static documents" to "personas as AI-consultable resources" came from him. Ensemble personas extend the move further — from consultation to simulation, from individual to group, from descriptive to predictive. Credit where it's due.
+Each solves a different problem. None replaces another.
 
 ## Agent-based modeling
 
