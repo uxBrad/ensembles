@@ -1,86 +1,50 @@
 # Skills
 
-This folder will contain AI skills designed to operate on ensemble persona documents. Skills are platform-agnostic markdown files describing structured workflows that can be implemented as Claude skills, Cursor rules, GPT custom instructions, or any equivalent.
+AI skills for operating on ensemble persona documents. Each skill is a platform-agnostic markdown specification that can be implemented as a Claude skill, Cursor rule, GPT custom instruction, or equivalent.
 
-**Status:** In design. Implementations forthcoming.
+**Status:** v1.0 — both skills built and available.
 
-## Planned skills
+---
 
-### Population skill (coming soon)
+## Skills
 
-**Purpose:** Help a UX researcher populate an ensemble document from research artifacts through a structured interview-style workflow.
+### Population skill
 
-**How it will work:**
+**File:** `population-skill.md`
 
-The researcher provides:
-- A blank or partially-filled ensemble template
-- Access to (or copies of) relevant research artifacts — interview transcripts, observation notes, support tickets, analytics, etc.
-- The name and basic context of the ensemble being modeled
+Populate an ensemble persona template from research artifacts through a structured, citation-tracked workflow. Every field is either evidenced (with citation), inferred (tagged), or explicitly empty — never fabricated.
 
-The skill then:
-1. Reads through the research artifacts looking for evidence relevant to each field in the template
-2. Populates fields where evidence is direct and traceable, citing the source per field
-3. Marks fields as `[inferred]` where the conclusion is reasonable but indirect
-4. Marks fields as `[insufficient research]` where there isn't supporting evidence
-5. Produces an explicit gap report: which sections are sparse, what kinds of research would close the gaps, suggested interview questions
+Use this when you have research artifacts (transcripts, notes, tickets, analytics) and want to build an ensemble document from them.
 
-**Why this is valuable:**
+### Simulation skill
 
-The bookkeeping work of going through research, finding evidence, populating the right fields, and tracking what's missing is mechanical and tedious. AI does this well. The *interpretation* of what evidence means and *whether the inference is justified* stays with the researcher — they review the populated document before committing to it.
+**File:** `simulation-skill.md`
 
-**Critical design constraints:**
+Run a stimulus against a populated ensemble document and produce a structured prediction report: per-member predictions, an evidence trail linking every claim to the document, a confidence map (high/medium/low), and research gaps.
 
-- The skill must never silently fabricate. Every populated field cites evidence; missing evidence produces an explicit gap, not a plausible-sounding fill.
-- The skill defers to the researcher on ambiguous cases. When evidence could support multiple interpretations, the skill surfaces the ambiguity rather than picking one.
-- The skill respects the methodology — it doesn't try to do ensemble identification (which requires UX judgment), only population of an already-identified ensemble.
+Use this when you want to ask "how would [ensemble] react to [feature/scenario/change]?"
 
-### Simulation skill (coming soon)
+---
 
-**Purpose:** Run a stimulus (feature concept, requirement, scenario) against a populated ensemble document and produce a transparent prediction of how the ensemble will react.
+## The pipeline
 
-**How it will work:**
+These skills handle two of the three stages in the ensemble workflow:
 
-The user provides:
-- A populated ensemble document
-- A stimulus to test — typically a feature description, a requirements doc, a scenario description, or a change description
+1. **Identification** — researcher-only, no AI. Decide who the ensemble members are and what context bounds this group. Clustering from research requires UX judgment that AI cannot reliably substitute.
 
-The skill then produces:
+2. **Population** (population skill) — fill the template from research artifacts with full citation tracking.
 
-1. **A prediction.** What this ensemble is likely to do with this input. Specific to the ensemble — references named members, named scenes, specific topology features.
+3. **Simulation** (simulation skill) — run stimuli against the populated document and produce predictions.
 
-2. **An evidence trail.** For each significant claim in the prediction, a citation back to which fields in the ensemble document support it.
+Don't skip population. Running simulation against a fabricated or hypothetical ensemble produces hypothetical predictions — which the framework is explicit about, but which undermines the value of running the simulation in the first place.
 
-3. **A confidence map.** Three layers:
-   - *High confidence:* directly supported by the document
-   - *Medium confidence:* reasonable inference from documented patterns
-   - *Low confidence / cannot predict:* where the document doesn't have enough information
+---
 
-4. **Suggested research.** Where the prediction is low-confidence, what additional research would close the gap.
+## Manual equivalents
 
-**Why this is valuable:**
+Both skills can be run manually without AI:
 
-This is the operational payoff of the entire framework. The reason to build ensemble documents is so you can ask "how will Team X react to Y?" and get a useful, evidence-grounded answer. The simulation skill is what turns the document from a description into a tool.
+- **Manual population:** Read research artifacts, fill in the template, cite evidence per field, leave gaps as [insufficient research]. Slower but produces equivalent output with discipline.
+- **Manual simulation:** Read a populated ensemble document with a stimulus in mind. Work through each member's Roster entry, reason through their likely reaction, trace each claim to the document, and note where the document is thin.
 
-**Critical design constraints:**
-
-- The skill must show its work. Every prediction is traceable to specific document content.
-- The skill must distinguish prediction from speculation. It is honest when the document doesn't support a confident answer.
-- The skill respects the document's grounding. If the document is sparse, the prediction is appropriately hedged.
-- The skill doesn't substitute its own intuitions for the document's content. If the document says X and the AI's general intuition says Y, the document wins.
-
-## Why skills are described here before being built
-
-Two reasons:
-
-1. **The skill design is part of the framework's design.** Building good skills requires the schema and methodology to be settled first. By documenting what the skills *will* do, the framework's intended use becomes clearer, which feeds back into schema and template design.
-
-2. **Skills are platform-specific in implementation but platform-agnostic in concept.** What goes in this folder is the conceptual specification. The actual implementations (Claude skill folders, Cursor rules, system prompts) may live elsewhere or be developed iteratively as the framework matures.
-
-## Manual workflows in the meantime
-
-While these skills are in development, both jobs can be done manually:
-
-- **Manual population:** Read through your research artifacts, fill in the template, cite evidence per field, leave gaps explicit. Slower but produces equivalent output if done with discipline.
-- **Manual simulation:** Read through a populated ensemble document with a stimulus in mind. Reason through how the team would react, citing which sections support each claim. Note where the document doesn't have enough information.
-
-Both are tractable for a researcher who knows the framework. The skills will accelerate them and enforce consistency, but they're not prerequisites for using the framework.
+The skills accelerate both workflows and enforce consistency. They are not prerequisites for using the framework.
