@@ -20,11 +20,13 @@ Three things make this different from traditional personas:
 - A finished system. This is in active development. The schema, methodology, and skills are evolving as the framework gets used in real product contexts.
 - A general-purpose AI persona tool. This is specifically designed for B2B contexts where teams (not individuals) are the meaningful unit of decision-making.
 
-## How this differs from existing AI persona approaches
+## How this differs from existing approaches
 
-This framework was sparked by [Paul Boag's "Giving Users A Voice With Virtual Personas"](https://www.smashingmagazine.com/2025/12/giving-users-voice-virtual-personas/) on Smashing Magazine, which proposes making research repositories queryable through AI-powered personas. That framework solves a *research distribution* problem, getting existing user research into the hands of stakeholders making decisions.
+The conceptual starting point for this framework is the **digital twin** concept from engineering and manufacturing: building a model of a real system with enough fidelity to simulate its behavior under new conditions. A digital twin isn't a description of a machine. It's a queryable model you can run scenarios against. Ensemble personas try to apply that idea to teams: not just describe them, but model them operationally so you can ask "what would happen if I dropped this change on this group right now?"
 
-Ensemble personas solve a different problem: *predicting how groups will react to changes*. Where Boag's framework is built for retrieval and synthesis, this framework is built for simulation. They're complementary; you could use both. See [docs/comparison.md](docs/comparison.md) for a fuller treatment.
+The most directly adjacent class of approaches is AI-consultable or "virtual" persona frameworks, which make research repositories queryable through AI. These solve a *research distribution* problem: getting existing user research into the hands of stakeholders making decisions. That's a real and important problem.
+
+Ensemble personas solve a different problem: *predicting how groups will react to changes*. Where AI-consultable persona frameworks are built for retrieval and synthesis, this framework is built for simulation. They're complementary; you could use both. See [docs/comparison.md](docs/comparison.md) for a fuller treatment.
 
 ## Quick example
 
@@ -82,4 +84,4 @@ If you've used the methodology to populate ensembles of your own and have feedba
 
 ## Acknowledgments
 
-The seed for this framework was Paul Boag's article on virtual personas. The conceptual move from "personas as descriptions" to "personas as simulations" owes a debt to agent-based modeling traditions in social science. The "Character Bible" framing borrows from screenwriting, where ensemble dynamics have been formally modeled for decades.
+The conceptual move from "personas as descriptions" to "personas as simulations" draws on the digital twin tradition in engineering — the idea that a model is most valuable not when it describes a system, but when it can be run against new conditions. The group dynamics framing owes a debt to agent-based modeling traditions in social science. The "Character Bible" framing borrows from screenwriting, where ensemble dynamics have been formally modeled for decades.

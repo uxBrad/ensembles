@@ -59,6 +59,28 @@ A complete UX research stack might include both:
 
 Each solves a different problem. None replaces another.
 
+## Digital twins
+
+The term "digital twin" comes from engineering and manufacturing. A digital twin is a computational model of a real-world physical system, maintained with enough fidelity to simulate the system's behavior. You feed it live or historical data from the real thing; you can then run scenarios against the model rather than waiting for the system itself to respond.
+
+Ensemble personas borrow the spirit of this for social systems. The goal is the same: build a model of a real-world entity that is operational, not just descriptive. You can query it. You can run scenarios against it. You can ask "what happens if I change this input" and get a structured prediction rather than a guess.
+
+The difference is fidelity and feedback loops. An engineering digital twin connects to live sensor data and can validate predictions against instrument readings in real time. An ensemble persona connects to a research repository and validates predictions against observed team behavior, but the feedback loop is slower, measurement is less precise, and interpretation requires more human judgment.
+
+Ensemble personas are, essentially, a low-fidelity digital twin for team configurations. They trade engineering rigor for the kind of qualitative richness that matters in human systems.
+
+## Synthetic users
+
+"Synthetic users" refers to a class of AI tools that generate persona-like entities from prompts or demographic specifications, without grounding in specific user research. These tools produce plausible-sounding perspectives at speed and scale. They're used by teams that want user-like input without the cost of actual research.
+
+Ensemble personas are the opposite of synthetic users in one critical dimension: they are grounded in real research. Every claim in an ensemble document is supposed to trace to a specific source — an interview, an observation, a support ticket, an artifact. Where research is thin, the document marks that gap rather than filling it with AI-generated plausibility.
+
+Where synthetic user tools ask AI to *generate* user perspectives, ensemble personas ask AI to *encode and retrieve* perspectives that were gathered through research.
+
+The risk with synthetic users is plausible fiction presented as user insight. This framework addresses that risk through evidence trails: simulation outputs should cite which ensemble fields supported each prediction, and predictions without traceable support should be flagged as low-confidence or speculative rather than returned as confident answers.
+
+If your research budget is zero and you need user-like input fast, synthetic users solve that problem. If your concern is accuracy, ensemble personas are built on the opposite premise: the framework's value degrades to zero if the documents are not grounded in real observation.
+
 ## Agent-based modeling
 
 Outside UX, *agent-based modeling* (ABM) has been used in social science for decades to simulate group behavior. ABM defines individual agents with rules, places them in environments, and observes emergent behavior.
