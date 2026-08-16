@@ -1,8 +1,8 @@
 # Synthesis Skill Specification
 
-**Status:** Design phase. Specification documented, implementation not yet built.
+**Status:** Built (v1.0). Claude Code reference implementation: [`claude/synthesis.md`](claude/synthesis.md).
 
-This document specifies an AI skill that assists researchers in synthesizing raw research data into populated ensemble persona documents. The skill is designed to help with the mechanical parts of synthesis (evidence tracking, gap identification, contradiction surfacing) while leaving the judgment work to the researcher.
+This document specifies an AI skill that assists researchers in synthesizing raw research data into populated ensemble persona documents. The skill is designed to help with the mechanical parts of synthesis (evidence tracking, gap identification, contradiction surfacing) while leaving the judgment work to the researcher. The specification below is platform-agnostic; the working implementation for Claude Code is at [`claude/synthesis.md`](claude/synthesis.md).
 
 This is the highest-risk skill in the framework. Synthesis is inherently inferential work, and the temptation to fabricate plausible content is enormous. The skill described here is intentionally conservative. It will produce documents with explicit gaps rather than documents that look complete. This trade-off is deliberate and important.
 
@@ -187,3 +187,11 @@ This conservatism is the design working correctly.
 The framework's claim is that ensemble personas can predict team behavior because they're grounded in real research. If the synthesis step produces confident-looking documents from thin research, the framework's grounding claim becomes a marketing claim rather than a real property. The skill's conservatism is what protects the framework's integrity.
 
 When you build the implementation, hold this conservatism as a non-negotiable constraint. Better to ship a skill that produces gaps honestly than one that produces complete documents dishonestly.
+
+---
+
+## Version history
+
+| Version | Date | Notes |
+|---|---|---|
+| 1.0 | 2026-08-16 | Initial release |

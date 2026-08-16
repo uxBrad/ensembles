@@ -44,7 +44,7 @@ See [examples/echo/hartwell-group.md](examples/echo/hartwell-group.md) for the f
 2. **Read [docs/methodology.md](docs/methodology.md)** to learn how to apply the framework.
 3. **Read [docs/research-methodology.md](docs/research-methodology.md)** when you're ready to do the research that grounds your ensembles. Includes a reusable interview script and synthesis guide.
 4. **Copy [templates/ensemble-template.md](templates/ensemble-template.md)** and populate it for one of your ensembles.
-5. **Use the AI skills** (coming soon, see [skills/](skills/)) to help populate documents from research and run simulations against populated ensembles.
+5. **Use the AI skills** (see [skills/](skills/), Claude Code implementations in [skills/claude/](skills/claude/)) to synthesize research, populate documents, and run simulations against populated ensembles.
 
 The framework requires a UX researcher (or similarly trained synthesizer) to do the ensemble identification work. AI can help populate documents and run simulations, but the work of looking at research and recognizing what ensembles exist is judgment work that doesn't delegate well.
 
@@ -54,7 +54,7 @@ The framework requires a UX researcher (or similarly trained synthesizer) to do 
 ensemble-personas/
 ├── docs/                        Concepts, schema, methodology, comparison, research methodology
 ├── templates/                   Blank templates ready to fill in
-├── skills/                      AI skills for population, simulation, and synthesis (coming soon)
+├── skills/                      AI skills for population, simulation, and synthesis (built, see skills/claude/)
 └── examples/
     ├── echo/                    Reference ensembles for Echo, an accessibility audit tool
     └── use-cases/               Worked examples of running stimuli against ensembles
@@ -67,7 +67,7 @@ This framework is in active development. Current state:
 - Schema: v1.0 (locked)
 - Templates: v1.0
 - Research methodology: v1.0 (interview script, synthesis guide, reflection template)
-- Skills: in design. Population, simulation, and synthesis skills are specified, with implementations forthcoming
+- Skills: v1.0. Population, simulation, and synthesis skills are specified and built for Claude Code; other platforms not yet implemented
 - Examples: two ensembles (Hartwell, Meridian), one use-case walkthrough
 
 Versioning follows the schema. Breaking changes to the schema will trigger major version bumps; additive changes will be minor.
@@ -84,4 +84,4 @@ If you've used the methodology to populate ensembles of your own and have feedba
 
 ## Acknowledgments
 
-The conceptual move from "personas as descriptions" to "personas as simulations" draws on the digital twin tradition in engineering — the idea that a model is most valuable not when it describes a system, but when it can be run against new conditions. The group dynamics framing owes a debt to agent-based modeling traditions in social science. The "Character Bible" framing borrows from screenwriting, where ensemble dynamics have been formally modeled for decades.
+The conceptual move from "personas as descriptions" to "personas as simulations" draws on the digital twin tradition in engineering. A model is most valuable not when it describes a system, but when it can be run against new conditions. The group dynamics framing owes a debt to agent-based modeling traditions in social science. The "Character Bible" framing borrows from screenwriting, where ensemble dynamics have been formally modeled for decades.

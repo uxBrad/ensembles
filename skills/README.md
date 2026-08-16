@@ -2,11 +2,11 @@
 
 This folder contains AI skill specifications designed to operate on ensemble persona documents. Skills are platform-agnostic markdown files describing structured workflows that can be implemented as Claude skills, Cursor rules, GPT custom instructions, or any equivalent.
 
-**Status:** Three skills are specified in detail. Implementations are forthcoming.
+**Status:** All three skills are specified in detail and built for Claude Code. Reference implementations are in [`claude/`](claude/): [`claude/population.md`](claude/population.md), [`claude/simulation.md`](claude/simulation.md), [`claude/synthesis.md`](claude/synthesis.md). Drop that folder into your own Claude Code skills directory to use them, or read them manually and follow the steps by hand. Implementations for other platforms (Cursor rules, GPT custom instructions) haven't been built yet. The specs below are written to be portable to those.
 
-## Planned skills
+## Skills
 
-### Population skill (coming soon)
+### Population skill
 
 **Purpose:** Help a UX researcher populate an ensemble document from research artifacts through a structured interview-style workflow.
 
@@ -34,7 +34,7 @@ The bookkeeping work of going through research, finding evidence, populating the
 - The skill defers to the researcher on ambiguous cases. When evidence could support multiple interpretations, the skill surfaces the ambiguity rather than picking one.
 - The skill respects the methodology. It doesn't try to do ensemble identification (which requires UX judgment), only population of an already-identified ensemble.
 
-### Simulation skill (coming soon)
+### Simulation skill
 
 **Purpose:** Run a stimulus (feature concept, requirement, scenario) against a populated ensemble document and produce a transparent prediction of how the ensemble will react.
 
@@ -68,7 +68,7 @@ This is the operational payoff of the entire framework. The reason to build ense
 - The skill respects the document's grounding. If the document is sparse, the prediction is appropriately hedged.
 - The skill doesn't substitute its own intuitions for the document's content. If the document says X and the AI's general intuition says Y, the document wins.
 
-### Synthesis skill (specified, see synthesis-skill.md)
+### Synthesis skill
 
 **Purpose:** Help a researcher turn raw research data (interview transcripts, observation notes, other artifacts) into a populated ensemble document, with per-field evidence trails, explicit gaps, and surfaced contradictions.
 
@@ -90,17 +90,17 @@ The synthesis skill is the highest-risk skill in the framework. Synthesis is inh
 
 The same constraints apply as for the other skills: no silent fabrication, evidence-first reasoning, explicit confidence levels, surfaced rather than smoothed contradictions. The synthesis skill spec goes into more depth on these because the risks are higher at the synthesis stage.
 
-## Why skills are described here before being built
+## Why the specs stay alongside the implementation
 
 Two reasons:
 
-1. **The skill design is part of the framework's design.** Building good skills requires the schema and methodology to be settled first. By documenting what the skills *will* do, the framework's intended use becomes clearer, which feeds back into schema and template design.
+1. **The skill design is part of the framework's design.** Building good skills requires the schema and methodology to be settled first. Documenting what the skills do makes the framework's intended use clearer, which feeds back into schema and template design.
 
-2. **Skills are platform-specific in implementation but platform-agnostic in concept.** What goes in this folder is the conceptual specification. The actual implementations (Claude skill folders, Cursor rules, system prompts) may live elsewhere or be developed iteratively as the framework matures.
+2. **Skills are platform-specific in implementation but platform-agnostic in concept.** What's in this folder's top level is the conceptual specification. The Claude Code implementation lives in [`claude/`](claude/). Someone building a Cursor rule or GPT custom instruction set from the same spec would follow the same phases and constraints, just packaged differently.
 
-## Manual workflows in the meantime
+## Manual workflows
 
-While these skills are in development, all three jobs can be done manually:
+If you're not running Claude Code, or just prefer working by hand, all three jobs can be done manually:
 
 - **Manual synthesis:** Follow the synthesis guide in [../docs/research-methodology.md](../docs/research-methodology.md). Read through your research artifacts, apply the eight synthesis principles, populate the template, cite evidence per field, leave gaps explicit. Slower but produces equivalent output if done with discipline.
 
