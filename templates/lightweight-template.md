@@ -1,6 +1,6 @@
 # Lightweight Ensemble: [Name]
 
-**Document Type:** Ensemble Persona (Lightweight) v1.0
+**Document Type:** Ensemble (Lightweight) v1.0
 **Grounding:** [Research basis]
 **Last Updated:** [YYYY-MM-DD]
 

@@ -1,4 +1,4 @@
-Populate an ensemble persona template from research artifacts through a structured, citation-tracked workflow.
+Populate an ensemble template from research artifacts through a structured, citation-tracked workflow.
 
 ## When to Use
 

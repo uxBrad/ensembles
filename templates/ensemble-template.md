@@ -1,6 +1,6 @@
 # Ensemble: [Name]
 
-**Document Type:** Ensemble Persona (Deep) v1.0
+**Document Type:** Ensemble (Deep) v1.0
 **Grounding:** [State the research basis — e.g., "12 interviews with auditors at financial services orgs, 6 team observations, support ticket analysis Q1-Q3 2025"]
 **Last Updated:** [YYYY-MM-DD]
 

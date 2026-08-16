@@ -6,7 +6,7 @@ People behave differently in different groups. The same product manager is asser
 
 This is not new information. Every UX researcher who has done team observation knows this. The problem is that traditional persona work systematically loses it. Personas abstract toward "the typical user," which strips out the contextual variation. The persona for "Senior Accessibility Auditor" treats the role as a stable type, when in practice the role's behavior depends heavily on the team configuration the auditor is operating in.
 
-Ensemble personas treat that contextual variation as the primary signal, not as noise to be averaged away.
+Ensembles treat that contextual variation as the primary signal, not as noise to be averaged away.
 
 ## What an ensemble is
 

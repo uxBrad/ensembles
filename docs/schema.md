@@ -1,12 +1,12 @@
 # Schema v1.0
 
-This document defines the structure of an ensemble persona. It is the authoritative reference. The template ([../templates/ensemble-template.md](../templates/ensemble-template.md)) implements this schema; examples ([../examples/](../examples/)) are populated instances of it.
+This document defines the structure of an ensemble. It is the authoritative reference. The template ([../templates/ensemble-template.md](../templates/ensemble-template.md)) implements this schema; examples ([../examples/](../examples/)) are populated instances of it.
 
 ## Document conventions
 
 Every ensemble document begins with metadata:
 
-- **Document Type:** Ensemble Persona (Deep) v1.0
+- **Document Type:** Ensemble (Deep) v1.0
 - **Grounding:** Statement of research basis (or "Hypothetical" for examples)
 - **Last Updated:** Date
 

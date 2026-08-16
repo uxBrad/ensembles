@@ -2,7 +2,7 @@
 
 **Status:** Built (v1.0). Claude Code reference implementation: [`claude/synthesis.md`](claude/synthesis.md).
 
-This document specifies an AI skill that assists researchers in synthesizing raw research data into populated ensemble persona documents. The skill is designed to help with the mechanical parts of synthesis (evidence tracking, gap identification, contradiction surfacing) while leaving the judgment work to the researcher. The specification below is platform-agnostic; the working implementation for Claude Code is at [`claude/synthesis.md`](claude/synthesis.md).
+This document specifies an AI skill that assists researchers in synthesizing raw research data into populated ensemble documents. The skill is designed to help with the mechanical parts of synthesis (evidence tracking, gap identification, contradiction surfacing) while leaving the judgment work to the researcher. The specification below is platform-agnostic; the working implementation for Claude Code is at [`claude/synthesis.md`](claude/synthesis.md).
 
 This is the highest-risk skill in the framework. Synthesis is inherently inferential work, and the temptation to fabricate plausible content is enormous. The skill described here is intentionally conservative. It will produce documents with explicit gaps rather than documents that look complete. This trade-off is deliberate and important.
 
@@ -151,7 +151,7 @@ When the skill exists and gets used in production, watch for:
 
 **Pressure to reduce gaps.** Stakeholders or researchers wanting to "complete" the document by reducing gaps. The mitigation is to be honest about what gaps mean: they're research prompts, not quality problems.
 
-**Domain mismatch.** The skill being applied in domains where the framework's schema is a poor fit. The mitigation is the methodology document's guidance on when ensemble personas are appropriate.
+**Domain mismatch.** The skill being applied in domains where the framework's schema is a poor fit. The mitigation is the methodology document's guidance on when ensembles are appropriate.
 
 **Gradual prompt drift.** Over time, the skill's prompts being adjusted to produce "better looking" output, which often means more confident and less honest. The mitigation is version control on the prompts and explicit testing against known cases.
 
@@ -184,7 +184,7 @@ The skill described here is more conservative than feels comfortable. It will pr
 
 This conservatism is the design working correctly.
 
-The framework's claim is that ensemble personas can predict team behavior because they're grounded in real research. If the synthesis step produces confident-looking documents from thin research, the framework's grounding claim becomes a marketing claim rather than a real property. The skill's conservatism is what protects the framework's integrity.
+The framework's claim is that ensembles can predict team behavior because they're grounded in real research. If the synthesis step produces confident-looking documents from thin research, the framework's grounding claim becomes a marketing claim rather than a real property. The skill's conservatism is what protects the framework's integrity.
 
 When you build the implementation, hold this conservatism as a non-negotiable constraint. Better to ship a skill that produces gaps honestly than one that produces complete documents dishonestly.
 

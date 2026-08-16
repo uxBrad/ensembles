@@ -1,10 +1,10 @@
 # Skill: Ensemble Simulation
 
 **Status:** Built (v1.0)
-**Schema compatibility:** Ensemble Personas v1.0
+**Schema compatibility:** Ensembles v1.0
 **Platform:** Platform-agnostic spec. Reference implementation: Claude (via Claude Code skill)
 
-Run a stimulus against a populated ensemble persona document and produce a structured prediction report with per-member predictions, an evidence trail, a confidence map, and research gaps.
+Run a stimulus against a populated ensemble document and produce a structured prediction report with per-member predictions, an evidence trail, a confidence map, and research gaps.
 
 ---
 

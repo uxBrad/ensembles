@@ -1,8 +1,8 @@
 # Skills
 
-This folder contains AI skill specifications designed to operate on ensemble persona documents. Skills are platform-agnostic markdown files describing structured workflows that can be implemented as Claude skills, Cursor rules, GPT custom instructions, or any equivalent.
+This folder contains AI skill specifications designed to operate on ensemble documents. Skills are platform-agnostic markdown files describing structured workflows that can be implemented as Claude skills, Cursor rules, GPT custom instructions, or any equivalent.
 
-**Status:** All three skills are specified in detail and built for Claude Code. Reference implementations are in [`claude/`](claude/): [`claude/population.md`](claude/population.md), [`claude/simulation.md`](claude/simulation.md), [`claude/synthesis.md`](claude/synthesis.md). Drop that folder into your own Claude Code skills directory to use them, or read them manually and follow the steps by hand. Implementations for other platforms (Cursor rules, GPT custom instructions) haven't been built yet. The specs below are written to be portable to those.
+**Status:** Four skills, all built for Claude Code. Reference implementations are in [`claude/`](claude/): [`claude/population.md`](claude/population.md), [`claude/simulation.md`](claude/simulation.md), [`claude/synthesis.md`](claude/synthesis.md), [`claude/elicitation.md`](claude/elicitation.md). Drop that folder into your own Claude Code skills directory to use them, or read them manually and follow the steps by hand. Implementations for other platforms (Cursor rules, GPT custom instructions) haven't been built yet. The specs below are written to be portable to those. Elicitation doesn't have a standalone platform-agnostic spec file the way the other three do — [`claude/elicitation.md`](claude/elicitation.md) is both spec and implementation.
 
 ## Skills
 
@@ -89,6 +89,22 @@ The synthesis skill is the highest-risk skill in the framework. Synthesis is inh
 **Critical design constraints:**
 
 The same constraints apply as for the other skills: no silent fabrication, evidence-first reasoning, explicit confidence levels, surfaced rather than smoothed contradictions. The synthesis skill spec goes into more depth on these because the risks are higher at the synthesis stage.
+
+### Elicitation skill
+
+**Purpose:** Build an ensemble document by interviewing the researcher directly, section by section, when they have direct knowledge of a team but no transcripts, notes, or other artifacts written up yet.
+
+**How it differs from population and synthesis:**
+
+Population and synthesis both start from artifacts that already exist. Elicitation starts from nothing but the researcher's own head. It asks a focused set of questions per schema section (Identity, Roster, Topology, Repertoire, Stimulus-Response), drafts each section from the answers, and shows it back before moving on. The output is the same shape as a populated document — evidenced, inferred, or marked as a gap — except the "evidence" is the researcher's own direct observation rather than a citation to a transcript.
+
+This is a faster way to get a first draft down when research exists only as tacit knowledge. It's explicitly weaker grounding than a document built from multiple artifacts or multiple people's input, and the output says so. The gap report points back toward running an actual interview (using the script in [../docs/research-methodology.md](../docs/research-methodology.md)) to strengthen it.
+
+**Critical design constraints:**
+
+Same no-fabrication discipline as the other skills: confident answers get cited as direct observation, hedged answers get tagged `[inferred]` with the researcher's own hedge quoted, and "I don't know" becomes an explicit gap rather than a smoothed-over guess. The skill confirms each section with the researcher before moving to the next, since live interviews drift more easily than a written artifact does.
+
+Implementation: [`claude/elicitation.md`](claude/elicitation.md).
 
 ## Why the specs stay alongside the implementation
 

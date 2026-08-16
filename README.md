@@ -1,8 +1,8 @@
-# Ensemble Personas
+# Ensembles
 
 **An experimental framework for modeling how groups of people, not individuals, metabolize change.**
 
-Traditional personas describe individual users. Ensemble personas describe the social configurations that decide whether your product, feature, or change actually gets adopted. Same person behaves differently on different teams; same feature lands differently in different ensembles. This framework is built around that observation.
+Traditional personas describe individual users. Ensembles describe the social configurations that decide whether your product, feature, or change actually gets adopted. Same person behaves differently on different teams; same feature lands differently in different ensembles. This framework is built around that observation.
 
 ## What this is
 
@@ -22,11 +22,11 @@ Three things make this different from traditional personas:
 
 ## How this differs from existing approaches
 
-The conceptual starting point for this framework is the **digital twin** concept from engineering and manufacturing: building a model of a real system with enough fidelity to simulate its behavior under new conditions. A digital twin isn't a description of a machine. It's a queryable model you can run scenarios against. Ensemble personas try to apply that idea to teams: not just describe them, but model them operationally so you can ask "what would happen if I dropped this change on this group right now?"
+The conceptual starting point for this framework is the **digital twin** concept from engineering and manufacturing: building a model of a real system with enough fidelity to simulate its behavior under new conditions. A digital twin isn't a description of a machine. It's a queryable model you can run scenarios against. Ensembles try to apply that idea to teams: not just describe them, but model them operationally so you can ask "what would happen if I dropped this change on this group right now?"
 
 The most directly adjacent class of approaches is AI-consultable or "virtual" persona frameworks, which make research repositories queryable through AI. These solve a *research distribution* problem: getting existing user research into the hands of stakeholders making decisions. That's a real and important problem.
 
-Ensemble personas solve a different problem: *predicting how groups will react to changes*. Where AI-consultable persona frameworks are built for retrieval and synthesis, this framework is built for simulation. They're complementary; you could use both. See [docs/comparison.md](docs/comparison.md) for a fuller treatment.
+Ensembles solve a different problem: *predicting how groups will react to changes*. Where AI-consultable persona frameworks are built for retrieval and synthesis, this framework is built for simulation. They're complementary; you could use both. See [docs/comparison.md](docs/comparison.md) for a fuller treatment.
 
 ## Quick example
 
@@ -44,17 +44,17 @@ See [examples/echo/hartwell-group.md](examples/echo/hartwell-group.md) for the f
 2. **Read [docs/methodology.md](docs/methodology.md)** to learn how to apply the framework.
 3. **Read [docs/research-methodology.md](docs/research-methodology.md)** when you're ready to do the research that grounds your ensembles. Includes a reusable interview script and synthesis guide.
 4. **Copy [templates/ensemble-template.md](templates/ensemble-template.md)** and populate it for one of your ensembles.
-5. **Use the AI skills** (see [skills/](skills/), Claude Code implementations in [skills/claude/](skills/claude/)) to synthesize research, populate documents, and run simulations against populated ensembles.
+5. **Use the AI skills** (see [skills/](skills/), Claude Code implementations in [skills/claude/](skills/claude/)) to interview yourself or synthesize raw research into a document, populate a document from existing evidence, and run simulations against populated ensembles.
 
 The framework requires a UX researcher (or similarly trained synthesizer) to do the ensemble identification work. AI can help populate documents and run simulations, but the work of looking at research and recognizing what ensembles exist is judgment work that doesn't delegate well.
 
 ## Repository structure
 
 ```
-ensemble-personas/
+ensembles/
 ├── docs/                        Concepts, schema, methodology, comparison, research methodology
 ├── templates/                   Blank templates ready to fill in
-├── skills/                      AI skills for population, simulation, and synthesis (built, see skills/claude/)
+├── skills/                      AI skills for elicitation, synthesis, population, and simulation (built, see skills/claude/)
 └── examples/
     ├── echo/                    Reference ensembles for Echo, an accessibility audit tool
     └── use-cases/               Worked examples of running stimuli against ensembles
@@ -67,7 +67,7 @@ This framework is in active development. Current state:
 - Schema: v1.0 (locked)
 - Templates: v1.0
 - Research methodology: v1.0 (interview script, synthesis guide, reflection template)
-- Skills: v1.0. Population, simulation, and synthesis skills are specified and built for Claude Code; other platforms not yet implemented
+- Skills: v1.0. Elicitation, synthesis, population, and simulation skills are built for Claude Code; other platforms not yet implemented
 - Examples: two ensembles (Hartwell, Meridian), one use-case walkthrough
 
 Versioning follows the schema. Breaking changes to the schema will trigger major version bumps; additive changes will be minor.

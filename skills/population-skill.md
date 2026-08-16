@@ -1,10 +1,10 @@
 # Skill: Ensemble Population
 
 **Status:** Built (v1.0)
-**Schema compatibility:** Ensemble Personas v1.0
+**Schema compatibility:** Ensembles v1.0
 **Platform:** Platform-agnostic spec. Reference implementation: Claude (via Claude Code skill)
 
-Populate an ensemble persona template from research artifacts through a structured, citation-tracked workflow. Every field is either evidenced (with citation), inferred (tagged), or empty — never fabricated.
+Populate an ensemble template from research artifacts through a structured, citation-tracked workflow. Every field is either evidenced (with citation), inferred (tagged), or empty — never fabricated.
 
 ---
 

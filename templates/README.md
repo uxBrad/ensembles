@@ -2,7 +2,7 @@
 
 Two templates are provided:
 
-- **`ensemble-template.md`** — The full ensemble persona document, ready to fill in.
+- **`ensemble-template.md`** — The full ensemble document, ready to fill in.
 - **`lightweight-template.md`** — Just the 2-3 sentence prose version, useful for early drafting or for sharing without the full doc.
 
 ## How to use

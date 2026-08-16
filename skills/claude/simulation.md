@@ -1,4 +1,4 @@
-Run a stimulus against a populated ensemble persona document and produce a structured prediction report.
+Run a stimulus against a populated ensemble document and produce a structured prediction report.
 
 ## When to Use
 
@@ -11,7 +11,7 @@ Run a stimulus against a populated ensemble persona document and produce a struc
 
 Before running, confirm you have both:
 
-1. **Ensemble doc** — a populated ensemble persona document (v1.0 schema). Example ensembles ship with this repo:
+1. **Ensemble doc** — a populated ensemble document (v1.0 schema). Example ensembles ship with this repo:
    - Hartwell Group: `examples/echo/hartwell-group.md`
    - Team Meridian: `examples/echo/team-meridian.md`
 2. **Stimulus** — a description of what's being tested: a feature concept, a scenario, a requirement, a change, a message, a decision

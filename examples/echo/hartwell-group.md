@@ -1,6 +1,6 @@
 # Ensemble: The Hartwell Group
 
-**Document Type:** Ensemble Persona (Deep) v1.0
+**Document Type:** Ensemble (Deep) v1.0
 **Grounding:** Hypothetical — illustrative example, not research-grounded
 **Last Updated:** 2026-05-05
 

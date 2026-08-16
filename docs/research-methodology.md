@@ -1,6 +1,6 @@
-# Research Methodology for Ensemble Personas
+# Research Methodology for Ensembles
 
-How to gather the research needed to populate ensemble persona documents, how to synthesize that research into useful ensembles, and what to do with what you learn along the way.
+How to gather the research needed to populate ensemble documents, how to synthesize that research into useful ensembles, and what to do with what you learn along the way.
 
 This document is designed to be used in two ways. As a guide for researchers populating their own ensembles. And as documentation for the methodology behind the example ensembles in this repository, so you can evaluate how rigorously they were built.
 
